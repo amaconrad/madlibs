@@ -6,7 +6,7 @@ library(useself)
 ui <- fluidPage(
   titlePanel("Mad Libs Game"),
   p("Fill in the blanks to create a story! Your results will be saved in my database"),
-
+cat("Does this give me a messge?\n"),
   sidebarLayout(
     sidebarPanel(
       textInput("noun", "Enter a singular computer noun:", ""),
@@ -78,6 +78,7 @@ server <- function(input, output) {
       adjective2 = input$adjective2,
       adverb = input$adverb
     ))
+    cat('Try to generate story \n')
     generate_story(
       noun = input$noun,
       noun2 = input$noun2,
